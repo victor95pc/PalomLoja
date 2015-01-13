@@ -30,8 +30,11 @@ gem 'activeadmin', github: 'activeadmin'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-group :test do
+group :test, :development do
   gem 'factory_girl_rails', '~>4.5.0'
+end
+
+group :test do
   gem 'capybara', '~>2.4.4'
   gem 'shoulda',  '~>3.5.0'
 end
