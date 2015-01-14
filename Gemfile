@@ -35,6 +35,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'mocha', '~>1.1.0'
   gem 'capybara', '~>2.4.4'
   gem 'shoulda',  '~>3.5.0'
 end
