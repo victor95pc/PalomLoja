@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :pedido do
     association :cliente
-    association :categoria
+    association :produto
   end
 end

@@ -1,10 +1,12 @@
 require 'test_helper'
 
 class AdminUserTest < ActiveSupport::TestCase
+  should     validate_confirmation_of :password
+  should     allow_value('email@addresse.foo').for(:email)
+  should_not allow_value('foo').for(:email)
+
   [:email, :password].each { |key| should validate_presence_of(key) }
 
-  should allow_value('email@addresse.foo').for(:email)
-  should_not allow_value('foo').for(:email)
 
   context 'password' do
     subject { AdminUser.new email: 'victor@email.com' }

@@ -3,7 +3,9 @@ require 'test_helper'
 class ClienteTest < ActiveSupport::TestCase
   should have_many(:produtos).through(:pedidos)
   should have_many(:pedidos)
-  [:username, :password, :password_confirmation].each { |key| should validate_presence_of(key) }
+  should validate_confirmation_of :password
+
+  [:name, :username, :password].each { |key| should validate_presence_of(key) }
 
   context 'password' do
     subject { Cliente.new username: 'victor95' }
@@ -15,7 +17,9 @@ class ClienteTest < ActiveSupport::TestCase
   end
 
   test 'Testar o checkout das compras' do
-    @cliente.pedidos = build(:pedido, 2)
+    produto = create(:produto)
+    @cliente.save
+    @cliente.pedidos = create_list(:pedido, 2, cliente: @cliente, produto: produto)
     @cliente.checkout
     assert_equal 2, Pedido.pago.count, 'Erro ao pagar os produtos'
   end
