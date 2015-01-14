@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ClienteTest < ActiveSupport::TestCase
+  should have_many(:produtos).through(:pedidos)
   should have_many(:pedidos)
   [:username, :password, :password_confirmation].each { |key| should validate_presence_of(key) }
 
