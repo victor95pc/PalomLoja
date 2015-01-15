@@ -8,6 +8,7 @@
 
 AdminUser.create!(email: 'victor@email.com', password: '12345678', password_confirmation: '12345678')
 cliente   = Cliente.create!(name: 'Victor', username: 'victor', password: '12345678', password_confirmation: '12345678')
+Categoria.create!(nome: 'Roupas')
 categoria = Categoria.create!(nome: 'Eletronicos')
 produto   = Produto.create!(nome: 'Computador', preco: 12.0, quantidade: 2, categoria: categoria)
 

@@ -23,5 +23,8 @@ module PalomLoja
     config.i18n.available_locales = [:en, :'pt-BR']
     config.i18n.default_locale = :'pt-BR'
     config.encoding = 'utf-8'
+
+    config.assets.precompile << '*.css'
+    config.assets.precompile << '*.js'
   end
 end

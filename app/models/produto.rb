@@ -6,6 +6,4 @@ class Produto < ActiveRecord::Base
   validates_uniqueness_of :nome
   validates_presence_of :nome, :quantidade, :preco, :categoria_id
   validates_associated :categoria
-
-  scope :por_categoria, ->(c) { where(categoria: c) }
 end

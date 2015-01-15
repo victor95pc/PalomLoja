@@ -6,11 +6,4 @@ class ProdutoTest < ActiveSupport::TestCase
   should have_many(:clientes).through(:pedidos)
   should have_many(:pedidos)
   should validate_uniqueness_of :nome
-
-
-  test 'Retonar produtos organizados em categoria' do
-    categoria = create(:categoria)
-    create_list(:produto, 20, categoria: categoria)
-    assert_equal 20, Produto.por_categoria(categoria).count
-  end
 end

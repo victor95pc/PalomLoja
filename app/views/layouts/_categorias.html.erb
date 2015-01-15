@@ -1,0 +1,7 @@
+<% if categorias == selected %>
+    <% klass = 'list-group-item categoria-select' %>
+<% else %>
+    <% klass = 'list-group-item' %>
+<% end %>
+
+<%= link_to(categorias.nome, categoria_produtos_path(categorias.nome), class: klass) %>

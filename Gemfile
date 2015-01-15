@@ -31,6 +31,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'spring',        group: :development
 
 group :test, :development do
+  gem 'pry'
   gem 'factory_girl_rails', '~>4.0.0'
 end
 
@@ -38,7 +39,6 @@ group :test do
   gem 'mocha', '~>1.1.0'
   gem 'capybara', '~>2.4.4'
   gem 'shoulda',  '~>3.5.0'
-  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
