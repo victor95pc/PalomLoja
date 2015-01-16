@@ -18,7 +18,7 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-.categoria-select {
+#categoria-selected {
     background-color: #F3F3F3;
 }
 
