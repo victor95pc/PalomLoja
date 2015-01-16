@@ -6,4 +6,8 @@ class Produto < ActiveRecord::Base
   validates_uniqueness_of :nome
   validates_presence_of :nome, :quantidade, :preco, :categoria_id
   validates_associated :categoria
+
+  def to_s
+    nome
+  end
 end

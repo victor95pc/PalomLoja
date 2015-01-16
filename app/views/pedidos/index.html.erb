@@ -2,8 +2,14 @@
   <div class="row">
     <% if @pedidos.any? %>
         <%= render partial: 'pedido', collection: @pedidos %>
+        <div class="col-md-9">
+          <div class="row">
+            <h3> Total: <%= @total %></h3>
+            <%= link_to 'Checkout', checkout_pedidos_path, class: 'btn btn-success btn-lg' %>
+          </div>
     <% else %>
-        <p>Não existe nenhum produto nessa categoria</p>
+        <h3>Não existe nenhum pedido na sua lista</h3>
     <% end %>
+        </div>
   </div>
 </div>

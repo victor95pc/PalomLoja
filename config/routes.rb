@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :pedidos, only: [:index, :create, :destroy]
+  resources :pedidos, only: [:index, :create, :destroy] do
+    get :checkout, on: :collection
+  end
   resources :produtos, only: [:index, :show] do
     get 'categoria/:nome', action: :por_categoria, on: :collection, as: 'categoria'
   end

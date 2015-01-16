@@ -27,6 +27,8 @@ gem 'devise', '~> 3.4.1'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'twitter-bootstrap-rails', '~>3.2.0'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

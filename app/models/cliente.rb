@@ -18,4 +18,7 @@ class Cliente < ActiveRecord::Base
     pedidos.pendente.update_all(status: Pedido.statuses[:pago])
   end
 
+  def to_s
+    name
+  end
 end

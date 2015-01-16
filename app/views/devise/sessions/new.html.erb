@@ -1,9 +1,5 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'login_panel'}) do |f| %>
-    <ul>
-      <% flash.each do |name, msg| %>
-          <%= content_tag :li, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      <% end %>
-    </ul>
+
     <div class="form-group">
       <%= f.text_field :username, class: 'form-control input-lg', placeholder: 'Usuário', autofocus: true %>
     </div>

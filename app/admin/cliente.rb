@@ -1,21 +1,24 @@
-ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation
+ActiveAdmin.register Cliente do
+  permit_params :username, :name, :password, :password_confirmation
 
   index do
     selectable_column
-    column :email
+    column :username
+    column :name
     column :current_sign_in_at
     column :created_at
     actions
   end
 
-  filter :email
+  filter :username
+  filter :name
   filter :sign_in_count
   filter :created_at
 
   form do |f|
-    f.inputs "Dados Adms" do
-      f.input :email
+    f.inputs "Dados Cliente" do
+      f.input :username
+      f.input :name
       f.input :password
       f.input :password_confirmation
     end

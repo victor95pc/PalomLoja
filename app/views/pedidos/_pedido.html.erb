@@ -5,7 +5,7 @@
     <div class="caption">
       <h4 class="pull-right"><%= number_to_currency(pedido.produto.preco) %></h4>
       <h4><%= link_to pedido.produto.nome, produto_path(pedido.produto) %></h4>
-      <h5><%= link_to('Deletar pedido', pedido_path(pedido), method: :delete, class: 'delete', data: {confirm: 'Tem certeza?' }) %></h5>
+      <h5><%= link_to('Deletar pedido', pedido_path(pedido), method: :delete, class: 'delete') %></h5>
     </div>
   </div>
 </div>
