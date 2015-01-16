@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: PalomLoja_production
+  adapter: postgresql
+  database: <%= ENV['DATABASE_URL'] %>
   username: PalomLoja
   password: <%= ENV['PALOMLOJA_DATABASE_PASSWORD'] %>
