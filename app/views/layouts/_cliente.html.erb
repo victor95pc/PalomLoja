@@ -1,0 +1,15 @@
+<% if cliente_signed_in? %>
+    <li>
+      <a class="login-header no-select"><%= "Olá #{current_cliente.name}" %></a>
+    </li>
+    <li>
+      <%= link_to 'Pedidos', pedidos_path, class: 'login-header' %>
+    </li>
+    <li>
+      <%= link_to 'Sair', destroy_session_path(:cliente), method: :delete, class: 'login-header' %>
+    </li>
+<% else %>
+    <li>
+      <%= link_to 'Logar', new_cliente_session_path, class: 'login-header' %>
+    </li>
+<% end %>

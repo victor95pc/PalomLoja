@@ -6,7 +6,6 @@
     <h2><%= @produto.nome %></h2>
     <h3>Quantidade: <%= @produto.quantidade %></h3>
     <h4><%= number_to_currency(@produto.preco) %></h4>
-    <%= link_to 'Comprar', produtos_path, class: 'btn btn-success btn-lg' %>
-    <h4>Lorem IPSUM</h4>
+    <%= link_to 'Comprar', pedidos_path(pedido: { cliente_id: current_cliente, produto_id: @produto }), method: :post, class: 'btn btn-success btn-lg' %>
   </div>
 </div>

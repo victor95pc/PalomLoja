@@ -1,0 +1,9 @@
+<div class="col-md-9">
+  <div class="row">
+    <% if @pedidos.any? %>
+        <%= render partial: 'pedido', collection: @pedidos %>
+    <% else %>
+        <p>Não existe nenhum produto nessa categoria</p>
+    <% end %>
+  </div>
+</div>

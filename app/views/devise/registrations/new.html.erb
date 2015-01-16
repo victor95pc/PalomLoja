@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'login_panel'}) do |f| %>
+    <ul>
+      <% resource.errors.full_messages.each do |msg| %>
+          <%= content_tag(:li, msg) %>
+      <% end %>
+    </ul>
+
+    <div class="form-group">
+      <%= f.text_field :username, class: 'form-control input-lg', placeholder: 'Usuário', autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, class: 'form-control input-lg', placeholder: "Senha minimo de 4 caracteres", autocomplete: "off" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, class: 'form-control input-lg', placeholder: "Confirmação da senha", autocomplete: "off" %>
+    </div>
+
+
+    <div class="btn-group" role="group" aria-label="...">
+      <%= link_to 'Voltar', new_session_path(resource_name), class: 'btn btn-primary btn-lg botao-grande' %>
+      <%= f.submit 'Criar', class: 'btn btn-primary btn-lg botao-grande' %>
+    </div>
+<% end %>
+
