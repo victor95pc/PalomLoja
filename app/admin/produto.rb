@@ -21,7 +21,7 @@ ActiveAdmin.register Produto do
       f.input :nome
       f.input :quantidade
       f.input :preco
-      f.input :categoria, as: :select
+      f.belongs :categoria
     end
     f.actions
   end
