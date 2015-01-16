@@ -3,9 +3,8 @@ ActiveAdmin.register Cliente do
 
   index do
     selectable_column
-    column :username
-    column :name
-    column :current_sign_in_at
+    column 'Usuario', :username
+    column 'Nome', :name
     column :created_at
     actions
   end
