@@ -21,8 +21,8 @@ ActiveAdmin.register Pedido do
 
   form do |f|
     f.inputs "Dados Pedido" do
-      f.input :cliente
-      f.input :produto
+      f.input :cliente, as: :select, collection: Cliente.all.map { |c| c, c.id }
+      f.input :produto, as: :select, collection: Produto.all.map { |p| p, p.id }
       f.input :status, as: :select, collection: Pedido.statuses.keys.map{|p| [p.humanize, Pedido.statuses[p]]}
     end
     f.actions

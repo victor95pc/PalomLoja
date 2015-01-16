@@ -21,7 +21,7 @@ ActiveAdmin.register Produto do
       f.input :nome
       f.input :quantidade
       f.input :preco
-      f.input :categoria
+      f.input :categoria, as: :select, collection: Categoria.all.map { |c| c, c.id }
     end
     f.actions
   end
